@@ -1,13 +1,11 @@
-
 {
-  "name": "rooz-bot",
+  "name": "rooza-bot-2",
   "version": "1.0.0",
-  "description": "Salla AI Assistant Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "engines": {
-    "node": "18.x"
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
