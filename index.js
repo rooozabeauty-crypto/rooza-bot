@@ -1,12 +1,11 @@
-const http = require("http");
+const express = require("express");
+const app = express();
 
-const PORT = process.env.PORT || 3000;
-
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Rooza bot is running 🚀");
+app.get("/", (req, res) => {
+  res.send("🚀 Rooza Bot is working!");
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
