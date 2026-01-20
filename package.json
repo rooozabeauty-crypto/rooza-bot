@@ -1,10 +1,13 @@
+
 {
-  "name": "salla-ai-bot",
+  "name": "rooz-bot",
   "version": "1.0.0",
   "description": "Salla AI Assistant Bot",
-  "main": "js/bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node js/bot.js"
+    "start": "node index.js"
   },
-  "dependencies": {}
+  "engines": {
+    "node": "18.x"
+  }
 }
