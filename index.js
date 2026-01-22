@@ -1,27 +1,24 @@
-
 const express = require("express");
 const app = express();
 
+// مهم جدًا
 app.use(express.json());
 
-// اختبار السيرفر
+// صفحة رئيسية
 app.get("/", (req, res) => {
-  res.status(200).send("🚀 Roza Bot is running");
+  res.status(200).send("🚀 بوت روزا يعمل");
 });
 
-// استقبال أي webhook
-app.post("*", (req, res) => {
-  console.log("Webhook PATH:", req.path);
-  console.log("Webhook BODY:", req.body);
+// Webhook من سلة
+app.post("/webhook", (req, res) => {
+  console.log("🔥 Salla Webhook HIT");
+  console.log("Headers:", req.headers);
+  console.log("Body:", JSON.stringify(req.body, null, 2));
 
-  res.status(200).json({
-    success: true,
-    message: "Webhook received"
-  });
+  res.status(200).json({ success: true });
 });
 
-// تشغيل السيرفر (هذا أهم سطرين!)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
