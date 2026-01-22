@@ -1,22 +1,10 @@
-const express = require("express");
-const app = express();
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("🚀 Rooza Bot is running");
-});
-
-app.post("/webhook", (req, res) => {
-  console.log("Webhook received:", req.body);
+app.post("*", (req, res) => {
+  console.log("Webhook PATH:", req.path);
+  console.log("Webhook BODY:", req.body);
 
   res.status(200).json({
     success: true,
-    message: "Webhook received successfully",
+    message: "Webhook received",
   });
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });
