@@ -1,6 +1,7 @@
 {
-  "name": "rooza-bot-2",
+  "name": "salla-ai-bot",
   "version": "1.0.0",
+  "description": "Salla AI Bot Server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
